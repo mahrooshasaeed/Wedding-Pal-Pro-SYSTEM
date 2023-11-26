@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace Wedding_Pal_Pro_SYSTEM
 {
-    public partial class Booking : Form
+    public partial class Customer : Form
     {
-        public Booking()
+        public Customer()
         {
             InitializeComponent();
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label21_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
     }
 }

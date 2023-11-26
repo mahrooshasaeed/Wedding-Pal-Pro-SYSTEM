@@ -16,7 +16,7 @@ namespace Wedding_Pal_Pro_SYSTEM
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Booking());
         }
     }
 }
