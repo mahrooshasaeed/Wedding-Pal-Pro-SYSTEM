@@ -16,5 +16,7 @@ namespace Wedding_Pal_Pro_SYSTEM
         {
             InitializeComponent();
         }
+
+       
     }
 }

@@ -28,30 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Staff));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label21 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.staffnametb = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.staffgender = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.staffphonetb = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.staffpass = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.gunaDataGridView1 = new Guna.UI.WinForms.GunaDataGridView();
-            this.bunifuThinButton23 = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.bunifuThinButton22 = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.bunifuThinButton24 = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.bunifuThinButton25 = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.addstaffbtn = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.resetstaffbtn = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.deletestaffbtn = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.editstaffbtn = new Bunifu.Framework.UI.BunifuThinButton2();
             this.bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.StaffDGV = new Guna.UI.WinForms.GunaDataGridView();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaDataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StaffDGV)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -70,7 +70,7 @@
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Verdana", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.Color.Black;
-            this.label21.Location = new System.Drawing.Point(985, 7);
+            this.label21.Location = new System.Drawing.Point(1030, 5);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(37, 35);
             this.label21.TabIndex = 12;
@@ -87,13 +87,13 @@
             this.label8.TabIndex = 11;
             this.label8.Text = "STAFF";
             // 
-            // textBox1
+            // staffnametb
             // 
-            this.textBox1.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(138, 90);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(143, 23);
-            this.textBox1.TabIndex = 14;
+            this.staffnametb.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.staffnametb.Location = new System.Drawing.Point(138, 90);
+            this.staffnametb.Name = "staffnametb";
+            this.staffnametb.Size = new System.Drawing.Size(143, 23);
+            this.staffnametb.TabIndex = 14;
             // 
             // label2
             // 
@@ -106,17 +106,17 @@
             this.label2.TabIndex = 13;
             this.label2.Text = "Phone No:";
             // 
-            // comboBox1
+            // staffgender
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Lucida Fax", 9.75F);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.staffgender.Font = new System.Drawing.Font("Lucida Fax", 9.75F);
+            this.staffgender.FormattingEnabled = true;
+            this.staffgender.Items.AddRange(new object[] {
             "Female",
             "Male"});
-            this.comboBox1.Location = new System.Drawing.Point(648, 92);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(96, 24);
-            this.comboBox1.TabIndex = 12;
+            this.staffgender.Location = new System.Drawing.Point(648, 92);
+            this.staffgender.Name = "staffgender";
+            this.staffgender.Size = new System.Drawing.Size(96, 24);
+            this.staffgender.TabIndex = 12;
             // 
             // label1
             // 
@@ -129,13 +129,13 @@
             this.label1.TabIndex = 11;
             this.label1.Text = "Name:";
             // 
-            // textBox2
+            // staffphonetb
             // 
-            this.textBox2.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(406, 92);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(143, 23);
-            this.textBox2.TabIndex = 15;
+            this.staffphonetb.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.staffphonetb.Location = new System.Drawing.Point(406, 92);
+            this.staffphonetb.Name = "staffphonetb";
+            this.staffphonetb.Size = new System.Drawing.Size(143, 23);
+            this.staffphonetb.TabIndex = 15;
             // 
             // label3
             // 
@@ -159,13 +159,13 @@
             this.label4.TabIndex = 18;
             this.label4.Text = "Password:";
             // 
-            // textBox3
+            // staffpass
             // 
-            this.textBox3.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(874, 92);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(134, 23);
-            this.textBox3.TabIndex = 19;
+            this.staffpass.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.staffpass.Location = new System.Drawing.Point(874, 92);
+            this.staffpass.Name = "staffpass";
+            this.staffpass.Size = new System.Drawing.Size(134, 23);
+            this.staffpass.TabIndex = 19;
             // 
             // label5
             // 
@@ -178,162 +178,106 @@
             this.label5.TabIndex = 39;
             this.label5.Text = "Booking List:";
             // 
-            // gunaDataGridView1
+            // addstaffbtn
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.gunaDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.gunaDataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gunaDataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.gunaDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.gunaDataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.gunaDataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gunaDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.gunaDataGridView1.ColumnHeadersHeight = 4;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gunaDataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.gunaDataGridView1.EnableHeadersVisualStyles = false;
-            this.gunaDataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.gunaDataGridView1.Location = new System.Drawing.Point(57, 236);
-            this.gunaDataGridView1.Name = "gunaDataGridView1";
-            this.gunaDataGridView1.RowHeadersVisible = false;
-            this.gunaDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gunaDataGridView1.Size = new System.Drawing.Size(920, 319);
-            this.gunaDataGridView1.TabIndex = 38;
-            this.gunaDataGridView1.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
-            this.gunaDataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.gunaDataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.gunaDataGridView1.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.gunaDataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.gunaDataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.gunaDataGridView1.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.gunaDataGridView1.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.gunaDataGridView1.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaDataGridView1.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.gunaDataGridView1.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.gunaDataGridView1.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.gunaDataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.gunaDataGridView1.ThemeStyle.HeaderStyle.Height = 4;
-            this.gunaDataGridView1.ThemeStyle.ReadOnly = false;
-            this.gunaDataGridView1.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.gunaDataGridView1.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.gunaDataGridView1.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.gunaDataGridView1.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.gunaDataGridView1.ThemeStyle.RowsStyle.Height = 22;
-            this.gunaDataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.gunaDataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.addstaffbtn.ActiveBorderThickness = 1;
+            this.addstaffbtn.ActiveCornerRadius = 20;
+            this.addstaffbtn.ActiveFillColor = System.Drawing.Color.Maroon;
+            this.addstaffbtn.ActiveForecolor = System.Drawing.Color.White;
+            this.addstaffbtn.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.addstaffbtn.BackColor = System.Drawing.SystemColors.Control;
+            this.addstaffbtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("addstaffbtn.BackgroundImage")));
+            this.addstaffbtn.ButtonText = "Add Staff";
+            this.addstaffbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.addstaffbtn.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addstaffbtn.ForeColor = System.Drawing.Color.Maroon;
+            this.addstaffbtn.IdleBorderThickness = 1;
+            this.addstaffbtn.IdleCornerRadius = 20;
+            this.addstaffbtn.IdleFillColor = System.Drawing.Color.White;
+            this.addstaffbtn.IdleForecolor = System.Drawing.Color.Maroon;
+            this.addstaffbtn.IdleLineColor = System.Drawing.Color.Maroon;
+            this.addstaffbtn.Location = new System.Drawing.Point(178, 142);
+            this.addstaffbtn.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.addstaffbtn.Name = "addstaffbtn";
+            this.addstaffbtn.Size = new System.Drawing.Size(176, 50);
+            this.addstaffbtn.TabIndex = 41;
+            this.addstaffbtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.addstaffbtn.Click += new System.EventHandler(this.addstaffbtn_Click);
             // 
-            // bunifuThinButton23
+            // resetstaffbtn
             // 
-            this.bunifuThinButton23.ActiveBorderThickness = 1;
-            this.bunifuThinButton23.ActiveCornerRadius = 20;
-            this.bunifuThinButton23.ActiveFillColor = System.Drawing.Color.Maroon;
-            this.bunifuThinButton23.ActiveForecolor = System.Drawing.Color.White;
-            this.bunifuThinButton23.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bunifuThinButton23.BackColor = System.Drawing.SystemColors.Control;
-            this.bunifuThinButton23.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton23.BackgroundImage")));
-            this.bunifuThinButton23.ButtonText = "Add Customer";
-            this.bunifuThinButton23.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuThinButton23.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuThinButton23.ForeColor = System.Drawing.Color.Maroon;
-            this.bunifuThinButton23.IdleBorderThickness = 1;
-            this.bunifuThinButton23.IdleCornerRadius = 20;
-            this.bunifuThinButton23.IdleFillColor = System.Drawing.Color.White;
-            this.bunifuThinButton23.IdleForecolor = System.Drawing.Color.Maroon;
-            this.bunifuThinButton23.IdleLineColor = System.Drawing.Color.Maroon;
-            this.bunifuThinButton23.Location = new System.Drawing.Point(178, 142);
-            this.bunifuThinButton23.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.bunifuThinButton23.Name = "bunifuThinButton23";
-            this.bunifuThinButton23.Size = new System.Drawing.Size(176, 50);
-            this.bunifuThinButton23.TabIndex = 41;
-            this.bunifuThinButton23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.resetstaffbtn.ActiveBorderThickness = 1;
+            this.resetstaffbtn.ActiveCornerRadius = 20;
+            this.resetstaffbtn.ActiveFillColor = System.Drawing.Color.Maroon;
+            this.resetstaffbtn.ActiveForecolor = System.Drawing.Color.White;
+            this.resetstaffbtn.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.resetstaffbtn.BackColor = System.Drawing.SystemColors.Control;
+            this.resetstaffbtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("resetstaffbtn.BackgroundImage")));
+            this.resetstaffbtn.ButtonText = "Reset";
+            this.resetstaffbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.resetstaffbtn.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resetstaffbtn.ForeColor = System.Drawing.Color.Maroon;
+            this.resetstaffbtn.IdleBorderThickness = 1;
+            this.resetstaffbtn.IdleCornerRadius = 20;
+            this.resetstaffbtn.IdleFillColor = System.Drawing.Color.White;
+            this.resetstaffbtn.IdleForecolor = System.Drawing.Color.Maroon;
+            this.resetstaffbtn.IdleLineColor = System.Drawing.Color.Maroon;
+            this.resetstaffbtn.Location = new System.Drawing.Point(742, 142);
+            this.resetstaffbtn.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.resetstaffbtn.Name = "resetstaffbtn";
+            this.resetstaffbtn.Size = new System.Drawing.Size(176, 50);
+            this.resetstaffbtn.TabIndex = 40;
+            this.resetstaffbtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // bunifuThinButton22
+            // deletestaffbtn
             // 
-            this.bunifuThinButton22.ActiveBorderThickness = 1;
-            this.bunifuThinButton22.ActiveCornerRadius = 20;
-            this.bunifuThinButton22.ActiveFillColor = System.Drawing.Color.Maroon;
-            this.bunifuThinButton22.ActiveForecolor = System.Drawing.Color.White;
-            this.bunifuThinButton22.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bunifuThinButton22.BackColor = System.Drawing.SystemColors.Control;
-            this.bunifuThinButton22.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton22.BackgroundImage")));
-            this.bunifuThinButton22.ButtonText = "Reset";
-            this.bunifuThinButton22.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuThinButton22.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuThinButton22.ForeColor = System.Drawing.Color.Maroon;
-            this.bunifuThinButton22.IdleBorderThickness = 1;
-            this.bunifuThinButton22.IdleCornerRadius = 20;
-            this.bunifuThinButton22.IdleFillColor = System.Drawing.Color.White;
-            this.bunifuThinButton22.IdleForecolor = System.Drawing.Color.Maroon;
-            this.bunifuThinButton22.IdleLineColor = System.Drawing.Color.Maroon;
-            this.bunifuThinButton22.Location = new System.Drawing.Point(742, 142);
-            this.bunifuThinButton22.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.bunifuThinButton22.Name = "bunifuThinButton22";
-            this.bunifuThinButton22.Size = new System.Drawing.Size(176, 50);
-            this.bunifuThinButton22.TabIndex = 40;
-            this.bunifuThinButton22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.deletestaffbtn.ActiveBorderThickness = 1;
+            this.deletestaffbtn.ActiveCornerRadius = 20;
+            this.deletestaffbtn.ActiveFillColor = System.Drawing.Color.Maroon;
+            this.deletestaffbtn.ActiveForecolor = System.Drawing.Color.White;
+            this.deletestaffbtn.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.deletestaffbtn.BackColor = System.Drawing.SystemColors.Control;
+            this.deletestaffbtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("deletestaffbtn.BackgroundImage")));
+            this.deletestaffbtn.ButtonText = "Delete Staff";
+            this.deletestaffbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.deletestaffbtn.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deletestaffbtn.ForeColor = System.Drawing.Color.Maroon;
+            this.deletestaffbtn.IdleBorderThickness = 1;
+            this.deletestaffbtn.IdleCornerRadius = 20;
+            this.deletestaffbtn.IdleFillColor = System.Drawing.Color.White;
+            this.deletestaffbtn.IdleForecolor = System.Drawing.Color.Maroon;
+            this.deletestaffbtn.IdleLineColor = System.Drawing.Color.Maroon;
+            this.deletestaffbtn.Location = new System.Drawing.Point(554, 142);
+            this.deletestaffbtn.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.deletestaffbtn.Name = "deletestaffbtn";
+            this.deletestaffbtn.Size = new System.Drawing.Size(176, 50);
+            this.deletestaffbtn.TabIndex = 43;
+            this.deletestaffbtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // bunifuThinButton24
+            // editstaffbtn
             // 
-            this.bunifuThinButton24.ActiveBorderThickness = 1;
-            this.bunifuThinButton24.ActiveCornerRadius = 20;
-            this.bunifuThinButton24.ActiveFillColor = System.Drawing.Color.Maroon;
-            this.bunifuThinButton24.ActiveForecolor = System.Drawing.Color.White;
-            this.bunifuThinButton24.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bunifuThinButton24.BackColor = System.Drawing.SystemColors.Control;
-            this.bunifuThinButton24.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton24.BackgroundImage")));
-            this.bunifuThinButton24.ButtonText = "Delete Staff";
-            this.bunifuThinButton24.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuThinButton24.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuThinButton24.ForeColor = System.Drawing.Color.Maroon;
-            this.bunifuThinButton24.IdleBorderThickness = 1;
-            this.bunifuThinButton24.IdleCornerRadius = 20;
-            this.bunifuThinButton24.IdleFillColor = System.Drawing.Color.White;
-            this.bunifuThinButton24.IdleForecolor = System.Drawing.Color.Maroon;
-            this.bunifuThinButton24.IdleLineColor = System.Drawing.Color.Maroon;
-            this.bunifuThinButton24.Location = new System.Drawing.Point(554, 142);
-            this.bunifuThinButton24.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.bunifuThinButton24.Name = "bunifuThinButton24";
-            this.bunifuThinButton24.Size = new System.Drawing.Size(176, 50);
-            this.bunifuThinButton24.TabIndex = 43;
-            this.bunifuThinButton24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // bunifuThinButton25
-            // 
-            this.bunifuThinButton25.ActiveBorderThickness = 1;
-            this.bunifuThinButton25.ActiveCornerRadius = 20;
-            this.bunifuThinButton25.ActiveFillColor = System.Drawing.Color.Maroon;
-            this.bunifuThinButton25.ActiveForecolor = System.Drawing.Color.White;
-            this.bunifuThinButton25.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bunifuThinButton25.BackColor = System.Drawing.SystemColors.Control;
-            this.bunifuThinButton25.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton25.BackgroundImage")));
-            this.bunifuThinButton25.ButtonText = "Edit  Customer";
-            this.bunifuThinButton25.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuThinButton25.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuThinButton25.ForeColor = System.Drawing.Color.Maroon;
-            this.bunifuThinButton25.IdleBorderThickness = 1;
-            this.bunifuThinButton25.IdleCornerRadius = 20;
-            this.bunifuThinButton25.IdleFillColor = System.Drawing.Color.White;
-            this.bunifuThinButton25.IdleForecolor = System.Drawing.Color.Maroon;
-            this.bunifuThinButton25.IdleLineColor = System.Drawing.Color.Maroon;
-            this.bunifuThinButton25.Location = new System.Drawing.Point(366, 142);
-            this.bunifuThinButton25.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.bunifuThinButton25.Name = "bunifuThinButton25";
-            this.bunifuThinButton25.Size = new System.Drawing.Size(176, 50);
-            this.bunifuThinButton25.TabIndex = 44;
-            this.bunifuThinButton25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.editstaffbtn.ActiveBorderThickness = 1;
+            this.editstaffbtn.ActiveCornerRadius = 20;
+            this.editstaffbtn.ActiveFillColor = System.Drawing.Color.Maroon;
+            this.editstaffbtn.ActiveForecolor = System.Drawing.Color.White;
+            this.editstaffbtn.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.editstaffbtn.BackColor = System.Drawing.SystemColors.Control;
+            this.editstaffbtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("editstaffbtn.BackgroundImage")));
+            this.editstaffbtn.ButtonText = "Edit  Staff";
+            this.editstaffbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.editstaffbtn.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editstaffbtn.ForeColor = System.Drawing.Color.Maroon;
+            this.editstaffbtn.IdleBorderThickness = 1;
+            this.editstaffbtn.IdleCornerRadius = 20;
+            this.editstaffbtn.IdleFillColor = System.Drawing.Color.White;
+            this.editstaffbtn.IdleForecolor = System.Drawing.Color.Maroon;
+            this.editstaffbtn.IdleLineColor = System.Drawing.Color.Maroon;
+            this.editstaffbtn.Location = new System.Drawing.Point(366, 142);
+            this.editstaffbtn.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.editstaffbtn.Name = "editstaffbtn";
+            this.editstaffbtn.Size = new System.Drawing.Size(176, 50);
+            this.editstaffbtn.TabIndex = 44;
+            this.editstaffbtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // bunifuThinButton21
             // 
@@ -353,41 +297,99 @@
             this.bunifuThinButton21.IdleFillColor = System.Drawing.Color.White;
             this.bunifuThinButton21.IdleForecolor = System.Drawing.Color.Maroon;
             this.bunifuThinButton21.IdleLineColor = System.Drawing.Color.Maroon;
-            this.bunifuThinButton21.Location = new System.Drawing.Point(463, 559);
+            this.bunifuThinButton21.Location = new System.Drawing.Point(463, 573);
             this.bunifuThinButton21.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.bunifuThinButton21.Name = "bunifuThinButton21";
             this.bunifuThinButton21.Size = new System.Drawing.Size(176, 50);
             this.bunifuThinButton21.TabIndex = 45;
             this.bunifuThinButton21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // StaffDGV
+            // 
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.StaffDGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.StaffDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.StaffDGV.BackgroundColor = System.Drawing.Color.White;
+            this.StaffDGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.StaffDGV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.StaffDGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Brown;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.StaffDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.StaffDGV.ColumnHeadersHeight = 28;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.StaffDGV.DefaultCellStyle = dataGridViewCellStyle6;
+            this.StaffDGV.EnableHeadersVisualStyles = false;
+            this.StaffDGV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.StaffDGV.Location = new System.Drawing.Point(72, 241);
+            this.StaffDGV.Name = "StaffDGV";
+            this.StaffDGV.RowHeadersVisible = false;
+            this.StaffDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.StaffDGV.Size = new System.Drawing.Size(920, 319);
+            this.StaffDGV.TabIndex = 58;
+            this.StaffDGV.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
+            this.StaffDGV.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.StaffDGV.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.StaffDGV.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.StaffDGV.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.StaffDGV.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.StaffDGV.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.StaffDGV.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.StaffDGV.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.Brown;
+            this.StaffDGV.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.StaffDGV.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.StaffDGV.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.StaffDGV.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.StaffDGV.ThemeStyle.HeaderStyle.Height = 28;
+            this.StaffDGV.ThemeStyle.ReadOnly = false;
+            this.StaffDGV.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.StaffDGV.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.StaffDGV.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.StaffDGV.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.StaffDGV.ThemeStyle.RowsStyle.Height = 22;
+            this.StaffDGV.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.StaffDGV.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            // 
             // Staff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1063, 788);
+            this.Controls.Add(this.StaffDGV);
             this.Controls.Add(this.bunifuThinButton21);
-            this.Controls.Add(this.bunifuThinButton25);
-            this.Controls.Add(this.bunifuThinButton24);
-            this.Controls.Add(this.bunifuThinButton23);
-            this.Controls.Add(this.bunifuThinButton22);
+            this.Controls.Add(this.editstaffbtn);
+            this.Controls.Add(this.deletestaffbtn);
+            this.Controls.Add(this.addstaffbtn);
+            this.Controls.Add(this.resetstaffbtn);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.gunaDataGridView1);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.staffpass);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.staffphonetb);
+            this.Controls.Add(this.staffnametb);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.staffgender);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Staff";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Staff";
+            this.Load += new System.EventHandler(this.Staff_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaDataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StaffDGV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -398,20 +400,20 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox staffnametb;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox staffgender;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox staffphonetb;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox staffpass;
         private System.Windows.Forms.Label label5;
-        private Guna.UI.WinForms.GunaDataGridView gunaDataGridView1;
-        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton23;
-        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton22;
-        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton24;
-        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton25;
+        private Bunifu.Framework.UI.BunifuThinButton2 addstaffbtn;
+        private Bunifu.Framework.UI.BunifuThinButton2 resetstaffbtn;
+        private Bunifu.Framework.UI.BunifuThinButton2 deletestaffbtn;
+        private Bunifu.Framework.UI.BunifuThinButton2 editstaffbtn;
         private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton21;
+        private Guna.UI.WinForms.GunaDataGridView StaffDGV;
     }
 }
