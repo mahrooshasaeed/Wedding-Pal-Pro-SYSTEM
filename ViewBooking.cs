@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Drawing.Printing;
 
 namespace Wedding_Pal_Pro_SYSTEM
 {
@@ -16,7 +17,11 @@ namespace Wedding_Pal_Pro_SYSTEM
         public ViewBooking()
         {
             InitializeComponent();
+            printDocument1.PrintPage += new PrintPageEventHandler(printDocument1_PrintPage);
+
+
         }
+
         private void ViewBooking_Load(object sender, EventArgs e)
         {
             populate();
@@ -57,7 +62,7 @@ namespace Wedding_Pal_Pro_SYSTEM
                 }
             }
         }
-        private void populate()
+        public void populate()
         {
             conn.Open();
             string query = "select * from Boooking";
@@ -66,10 +71,12 @@ namespace Wedding_Pal_Pro_SYSTEM
             var ds = new DataSet();
             sda.Fill(ds);
             gunaDataGridView1.DataSource = ds.Tables[0];
+            gunaDataGridView1.AutoGenerateColumns = true;
             conn.Close();
         }
         int BookKey = 0;
-        private void gunaDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+
+        public void gunaDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             string BookDate = gunaDataGridView1.SelectedRows[0].Cells[1].Value.ToString();
             if (BookDate == "")
@@ -79,44 +86,67 @@ namespace Wedding_Pal_Pro_SYSTEM
             else
             {
                 BookKey = Convert.ToInt32(gunaDataGridView1.SelectedRows[0].Cells[0].Value.ToString());
-                if(printPreviewDialog1.ShowDialog() == DialogResult.OK)
+              
+                if (printPreviewDialog1.ShowDialog() == DialogResult.OK)
                 {
                     printDocument1.Print();
                 }
             }
+
         }
+        
+
 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-            string Bid = gunaDataGridView1.SelectedRows[0].Cells[0].Value.ToString();
-            string BDate = gunaDataGridView1.SelectedRows[0].Cells[1].Value.ToString();
-            string BTime = gunaDataGridView1.SelectedRows[0].Cells[2].Value.ToString();
-            string CustName = gunaDataGridView1.SelectedRows[0].Cells[3].Value.ToString();
-            string Persons = gunaDataGridView1.SelectedRows[0].Cells[4].Value.ToString();
+            string Bookid = gunaDataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+            string Bookdate = gunaDataGridView1.SelectedRows[0].Cells[1].Value.ToString();
+            string BookTime = gunaDataGridView1.SelectedRows[0].Cells[2].Value.ToString();
+            string Name = gunaDataGridView1.SelectedRows[0].Cells[3].Value.ToString();
+            string Pers = gunaDataGridView1.SelectedRows[0].Cells[4].Value.ToString();
             string Dishes = gunaDataGridView1.SelectedRows[0].Cells[5].Value.ToString();
-            string Drinks = gunaDataGridView1.SelectedRows[0].Cells[6].Value.ToString();
-            string CostFood = gunaDataGridView1.SelectedRows[0].Cells[7].Value.ToString();
-            string CostDrink = gunaDataGridView1.SelectedRows[0].Cells[8].Value.ToString();
-            string GrdTotal = gunaDataGridView1.SelectedRows[0].Cells[9].Value.ToString();
-            string Advance = gunaDataGridView1.SelectedRows[0].Cells[10].Value.ToString();
-            string Balance = gunaDataGridView1.SelectedRows[0].Cells[11].Value.ToString();
+            string Bev = gunaDataGridView1.SelectedRows[0].Cells[6].Value.ToString();
+            string Drinkcost = gunaDataGridView1.SelectedRows[0].Cells[7].Value.ToString();
+            string DishCost = gunaDataGridView1.SelectedRows[0].Cells[8].Value.ToString();
+            string Tot = gunaDataGridView1.SelectedRows[0].Cells[9].Value.ToString();
+            string Adv = gunaDataGridView1.SelectedRows[0].Cells[10].Value.ToString();
+            string Bal = gunaDataGridView1.SelectedRows[0].Cells[11].Value.ToString();
 
             e.Graphics.DrawString("Booking Summary", new Font("Century Gothic", 25, FontStyle.Regular), Brushes.Red, new Point(230));
-            e.Graphics.DrawString("Booking Id"+ Bid, new Font("Century Gothic", 20, FontStyle.Regular), Brushes.BlueViolet, new Point(130,150));
-            e.Graphics.DrawString("Booking Date"+ BDate, new Font("Century Gothic", 20, FontStyle.Regular), Brushes.BlueViolet, new Point(130, 200));
-            e.Graphics.DrawString("Booking Time" + BTime, new Font("Century Gothic", 20, FontStyle.Regular), Brushes.BlueViolet, new Point(130, 200));
-            e.Graphics.DrawString("Customer Name" + CustName, new Font("Century Gothic", 20, FontStyle.Regular), Brushes.BlueViolet, new Point(130, 200));
-            e.Graphics.DrawString("No Persons" + Persons, new Font("Century Gothic", 20, FontStyle.Regular), Brushes.BlueViolet, new Point(130, 200));
-            e.Graphics.DrawString("Dishes" + Dishes, new Font("Century Gothic", 20, FontStyle.Regular), Brushes.BlueViolet, new Point(130, 200));
-            e.Graphics.DrawString("Drinks" + Drinks, new Font("Century Gothic", 20, FontStyle.Regular), Brushes.BlueViolet, new Point(130, 200));
-            e.Graphics.DrawString("Dishes Cost" + CostFood, new Font("Century Gothic", 20, FontStyle.Regular), Brushes.BlueViolet, new Point(130, 200));
-            e.Graphics.DrawString("Drink Cost" + CostDrink, new Font("Century Gothic", 20, FontStyle.Regular), Brushes.BlueViolet, new Point(130, 200));
-            e.Graphics.DrawString("Total" + GrdTotal, new Font("Century Gothic", 20, FontStyle.Regular), Brushes.BlueViolet, new Point(130, 200));
-            e.Graphics.DrawString("Advance" + Advance, new Font("Century Gothic", 20, FontStyle.Regular), Brushes.BlueViolet, new Point(130, 200));
-            e.Graphics.DrawString("Balance" + Balance, new Font("Century Gothic", 20, FontStyle.Regular), Brushes.BlueViolet, new Point(130, 200));
+            e.Graphics.DrawString("Booking Id :" + Bookid, new Font("Century Gothic", 18, FontStyle.Regular), Brushes.BlueViolet, new Point(100, 150));
+            e.Graphics.DrawString("Booking Date :" + Bookdate, new Font("Century Gothic", 18, FontStyle.Regular), Brushes.BlueViolet, new Point(100, 190));
+            e.Graphics.DrawString("Booking Time :" + BookTime, new Font("Century Gothic", 18, FontStyle.Regular), Brushes.BlueViolet, new Point(100, 230));
+            e.Graphics.DrawString("Customer Name :" + Name, new Font("Century Gothic", 18, FontStyle.Regular), Brushes.BlueViolet, new Point(100, 270));
+            e.Graphics.DrawString("No Persons :" + Pers, new Font("Century Gothic", 18, FontStyle.Regular), Brushes.BlueViolet, new Point(100, 310));
+            e.Graphics.DrawString("Dishes :" + Dishes, new Font("Century Gothic", 18, FontStyle.Regular), Brushes.BlueViolet, new Point(100, 340));
+            e.Graphics.DrawString("Beverage :" + Bev, new Font("Century Gothic", 18, FontStyle.Regular), Brushes.BlueViolet, new Point(100, 370));
+            e.Graphics.DrawString("Drinks Cost :" + Drinkcost, new Font("Century Gothic", 20, FontStyle.Regular), Brushes.BlueViolet, new Point(100, 400));
+            e.Graphics.DrawString("Dishes Cost :" + DishCost, new Font("Century Gothic", 20, FontStyle.Regular), Brushes.BlueViolet, new Point(100, 440));
+            e.Graphics.DrawString("Total :" + Tot, new Font("Century Gothic", 20, FontStyle.Regular), Brushes.BlueViolet, new Point(100, 470));
+            e.Graphics.DrawString("Advance :" + Adv, new Font("Century Gothic", 20, FontStyle.Regular), Brushes.BlueViolet, new Point(100, 510));
+            e.Graphics.DrawString("Balance : " + Bal, new Font("Century Gothic", 20, FontStyle.Regular), Brushes.BlueViolet, new Point(100, 550));
 
 
+        }
 
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void printPreviewDialog1_Load(object sender, EventArgs e)
+        {
+            if (!printPreviewDialog1.Visible)  // Check if the dialog is not already visible
+            {
+                printPreviewDialog1.Document = printDocument1;
+                printDocument1.DefaultPageSettings.PaperSize = new System.Drawing.Printing.PaperSize("pprnm", 285, 600);
+                printPreviewDialog1.ShowDialog();
+            }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

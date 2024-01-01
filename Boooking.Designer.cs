@@ -104,14 +104,16 @@
             this.ColdcoffeecheckBox = new System.Windows.Forms.CheckBox();
             this.lassicheckBox = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.persontb = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.timetxt = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.Datetxt = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.bunifuThinButton23 = new Bunifu.Framework.UI.BunifuThinButton2();
             this.bunifuThinButton22 = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.bunifuThinButton24 = new Bunifu.Framework.UI.BunifuThinButton2();
             this.panel1.SuspendLayout();
             this.Dishes.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -120,7 +122,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Maroon;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel1.Controls.Add(this.label21);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -132,19 +134,20 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Verdana", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.ForeColor = System.Drawing.Color.Black;
-            this.label21.Location = new System.Drawing.Point(974, 5);
+            this.label21.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.Color.White;
+            this.label21.Location = new System.Drawing.Point(950, 5);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(37, 35);
+            this.label21.Size = new System.Drawing.Size(31, 29);
             this.label21.TabIndex = 12;
             this.label21.Text = "X";
+            this.label21.Click += new System.EventHandler(this.label21_Click);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Verdana", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(3, 7);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(199, 35);
@@ -153,12 +156,13 @@
             // 
             // custidcombo
             // 
+            this.custidcombo.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.custidcombo.Font = new System.Drawing.Font("Lucida Fax", 9.75F);
             this.custidcombo.FormattingEnabled = true;
             this.custidcombo.Items.AddRange(new object[] {
             "Day",
             "Night"});
-            this.custidcombo.Location = new System.Drawing.Point(427, 100);
+            this.custidcombo.Location = new System.Drawing.Point(459, 87);
             this.custidcombo.Name = "custidcombo";
             this.custidcombo.Size = new System.Drawing.Size(96, 24);
             this.custidcombo.TabIndex = 70;
@@ -169,7 +173,7 @@
             this.Customernamelbl.AutoSize = true;
             this.Customernamelbl.Font = new System.Drawing.Font("Lucida Fax", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Customernamelbl.ForeColor = System.Drawing.Color.Black;
-            this.Customernamelbl.Location = new System.Drawing.Point(537, 101);
+            this.Customernamelbl.Location = new System.Drawing.Point(569, 88);
             this.Customernamelbl.Name = "Customernamelbl";
             this.Customernamelbl.Size = new System.Drawing.Size(0, 24);
             this.Customernamelbl.TabIndex = 69;
@@ -177,11 +181,11 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Lucida Fax", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Lucida Fax", 15.75F, System.Drawing.FontStyle.Bold);
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(272, 100);
+            this.label7.Location = new System.Drawing.Point(304, 87);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(149, 24);
+            this.label7.Size = new System.Drawing.Size(157, 24);
             this.label7.TabIndex = 68;
             this.label7.Text = "Customer ID:";
             // 
@@ -217,9 +221,9 @@
             this.Dishes.Controls.Add(this.FriedfishcheckBox);
             this.Dishes.Controls.Add(this.MuttonHaleemcheckBox);
             this.Dishes.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Dishes.Location = new System.Drawing.Point(535, 149);
+            this.Dishes.Location = new System.Drawing.Point(517, 111);
             this.Dishes.Name = "Dishes";
-            this.Dishes.Size = new System.Drawing.Size(347, 401);
+            this.Dishes.Size = new System.Drawing.Size(347, 388);
             this.Dishes.TabIndex = 66;
             this.Dishes.TabStop = false;
             this.Dishes.Text = "Dishes";
@@ -227,7 +231,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(71, 359);
+            this.button2.Location = new System.Drawing.Point(56, 354);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(89, 28);
             this.button2.TabIndex = 32;
@@ -239,8 +243,8 @@
             // 
             this.FoodCostlbl.AutoSize = true;
             this.FoodCostlbl.Font = new System.Drawing.Font("Lucida Fax", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FoodCostlbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.FoodCostlbl.Location = new System.Drawing.Point(187, 364);
+            this.FoodCostlbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.FoodCostlbl.Location = new System.Drawing.Point(187, 357);
             this.FoodCostlbl.Name = "FoodCostlbl";
             this.FoodCostlbl.Size = new System.Drawing.Size(109, 22);
             this.FoodCostlbl.TabIndex = 30;
@@ -250,7 +254,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Lucida Fax", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label14.Location = new System.Drawing.Point(234, 34);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(104, 22);
@@ -261,7 +265,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Lucida Fax", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label15.Location = new System.Drawing.Point(156, 34);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(66, 22);
@@ -272,7 +276,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Lucida Fax", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label16.Location = new System.Drawing.Point(21, 36);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(61, 22);
@@ -546,9 +550,9 @@
             this.groupBox4.Controls.Add(this.Otherchargestb);
             this.groupBox4.Controls.Add(this.label17);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(131, 546);
+            this.groupBox4.Location = new System.Drawing.Point(135, 506);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(751, 129);
+            this.groupBox4.Size = new System.Drawing.Size(751, 133);
             this.groupBox4.TabIndex = 67;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Payments";
@@ -565,11 +569,11 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Lucida Fax", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label20.Font = new System.Drawing.Font("Lucida Fax", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label20.Location = new System.Drawing.Point(328, 78);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(92, 22);
+            this.label20.Size = new System.Drawing.Size(101, 24);
             this.label20.TabIndex = 37;
             this.label20.Text = "Balance:";
             // 
@@ -584,11 +588,11 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Lucida Fax", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label19.Font = new System.Drawing.Font("Lucida Fax", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label19.Location = new System.Drawing.Point(18, 78);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(101, 22);
+            this.label19.Size = new System.Drawing.Size(111, 24);
             this.label19.TabIndex = 35;
             this.label19.Text = "Advance:";
             // 
@@ -604,11 +608,11 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Lucida Fax", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label18.Font = new System.Drawing.Font("Lucida Fax", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label18.Location = new System.Drawing.Point(326, 34);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(111, 22);
+            this.label18.Size = new System.Drawing.Size(121, 24);
             this.label18.TabIndex = 33;
             this.label18.Text = "Grd Total:";
             // 
@@ -623,11 +627,11 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Lucida Fax", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label17.Location = new System.Drawing.Point(18, 34);
+            this.label17.Font = new System.Drawing.Font("Lucida Fax", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label17.Location = new System.Drawing.Point(7, 34);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(160, 22);
+            this.label17.Size = new System.Drawing.Size(176, 24);
             this.label17.TabIndex = 31;
             this.label17.Text = "Other Charges:";
             // 
@@ -663,9 +667,9 @@
             this.Drinks.Controls.Add(this.lassicheckBox);
             this.Drinks.Controls.Add(this.checkBox1);
             this.Drinks.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Drinks.Location = new System.Drawing.Point(86, 137);
+            this.Drinks.Location = new System.Drawing.Point(86, 113);
             this.Drinks.Name = "Drinks";
-            this.Drinks.Size = new System.Drawing.Size(352, 403);
+            this.Drinks.Size = new System.Drawing.Size(352, 386);
             this.Drinks.TabIndex = 65;
             this.Drinks.TabStop = false;
             this.Drinks.Text = "Drinks";
@@ -673,7 +677,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(49, 359);
+            this.button1.Location = new System.Drawing.Point(49, 351);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(91, 28);
             this.button1.TabIndex = 31;
@@ -685,8 +689,8 @@
             // 
             this.Bevcostlbl.AutoSize = true;
             this.Bevcostlbl.Font = new System.Drawing.Font("Lucida Fax", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Bevcostlbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Bevcostlbl.Location = new System.Drawing.Point(171, 364);
+            this.Bevcostlbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Bevcostlbl.Location = new System.Drawing.Point(171, 354);
             this.Bevcostlbl.Name = "Bevcostlbl";
             this.Bevcostlbl.Size = new System.Drawing.Size(117, 22);
             this.Bevcostlbl.TabIndex = 30;
@@ -696,7 +700,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Lucida Fax", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label6.Location = new System.Drawing.Point(234, 34);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(104, 22);
@@ -707,7 +711,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Lucida Fax", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label5.Location = new System.Drawing.Point(156, 34);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(66, 22);
@@ -718,7 +722,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Lucida Fax", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label3.Location = new System.Drawing.Point(21, 36);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 22);
@@ -981,64 +985,68 @@
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // textBox1
+            // persontb
             // 
-            this.textBox1.Font = new System.Drawing.Font("Lucida Fax", 9.75F);
-            this.textBox1.Location = new System.Drawing.Point(722, 54);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 23);
-            this.textBox1.TabIndex = 64;
+            this.persontb.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.persontb.Font = new System.Drawing.Font("Lucida Fax", 9.75F);
+            this.persontb.Location = new System.Drawing.Point(722, 54);
+            this.persontb.Name = "persontb";
+            this.persontb.Size = new System.Drawing.Size(100, 23);
+            this.persontb.TabIndex = 64;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Lucida Fax", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Lucida Fax", 15.75F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(581, 53);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(135, 24);
+            this.label2.Size = new System.Drawing.Size(142, 24);
             this.label2.TabIndex = 63;
             this.label2.Text = "No Persons:";
             // 
-            // comboBox1
+            // timetxt
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Lucida Fax", 9.75F);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.timetxt.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.timetxt.Font = new System.Drawing.Font("Lucida Fax", 9.75F);
+            this.timetxt.FormattingEnabled = true;
+            this.timetxt.Items.AddRange(new object[] {
             "Day",
             "Night"});
-            this.comboBox1.Location = new System.Drawing.Point(435, 53);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(96, 24);
-            this.comboBox1.TabIndex = 62;
+            this.timetxt.Location = new System.Drawing.Point(435, 53);
+            this.timetxt.Name = "timetxt";
+            this.timetxt.Size = new System.Drawing.Size(96, 24);
+            this.timetxt.TabIndex = 62;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Lucida Fax", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Lucida Fax", 15.75F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(359, 52);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 24);
+            this.label1.Size = new System.Drawing.Size(73, 24);
             this.label1.TabIndex = 61;
             this.label1.Text = "Time:";
             // 
-            // dateTimePicker1
+            // Datetxt
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(86, 52);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(239, 23);
-            this.dateTimePicker1.TabIndex = 60;
+            this.Datetxt.CalendarMonthBackground = System.Drawing.SystemColors.ButtonHighlight;
+            this.Datetxt.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Datetxt.Location = new System.Drawing.Point(86, 52);
+            this.Datetxt.Name = "Datetxt";
+            this.Datetxt.Size = new System.Drawing.Size(239, 23);
+            this.Datetxt.TabIndex = 60;
+            this.Datetxt.ValueChanged += new System.EventHandler(this.Datetxt_ValueChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Lucida Fax", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Lucida Fax", 15.75F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(16, 50);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 24);
+            this.label4.Size = new System.Drawing.Size(68, 24);
             this.label4.TabIndex = 59;
             this.label4.Text = "Date:";
             // 
@@ -1046,21 +1054,21 @@
             // 
             this.bunifuThinButton23.ActiveBorderThickness = 1;
             this.bunifuThinButton23.ActiveCornerRadius = 20;
-            this.bunifuThinButton23.ActiveFillColor = System.Drawing.Color.Maroon;
-            this.bunifuThinButton23.ActiveForecolor = System.Drawing.Color.White;
-            this.bunifuThinButton23.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bunifuThinButton23.BackColor = System.Drawing.SystemColors.Control;
+            this.bunifuThinButton23.ActiveFillColor = System.Drawing.Color.White;
+            this.bunifuThinButton23.ActiveForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuThinButton23.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuThinButton23.BackColor = System.Drawing.Color.White;
             this.bunifuThinButton23.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton23.BackgroundImage")));
             this.bunifuThinButton23.ButtonText = "Add Booking";
             this.bunifuThinButton23.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuThinButton23.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuThinButton23.ForeColor = System.Drawing.Color.Maroon;
+            this.bunifuThinButton23.ForeColor = System.Drawing.Color.White;
             this.bunifuThinButton23.IdleBorderThickness = 1;
             this.bunifuThinButton23.IdleCornerRadius = 20;
-            this.bunifuThinButton23.IdleFillColor = System.Drawing.Color.White;
-            this.bunifuThinButton23.IdleForecolor = System.Drawing.Color.Maroon;
-            this.bunifuThinButton23.IdleLineColor = System.Drawing.Color.Maroon;
-            this.bunifuThinButton23.Location = new System.Drawing.Point(306, 692);
+            this.bunifuThinButton23.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuThinButton23.IdleForecolor = System.Drawing.Color.White;
+            this.bunifuThinButton23.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuThinButton23.Location = new System.Drawing.Point(352, 657);
             this.bunifuThinButton23.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.bunifuThinButton23.Name = "bunifuThinButton23";
             this.bunifuThinButton23.Size = new System.Drawing.Size(176, 50);
@@ -1072,32 +1080,88 @@
             // 
             this.bunifuThinButton22.ActiveBorderThickness = 1;
             this.bunifuThinButton22.ActiveCornerRadius = 20;
-            this.bunifuThinButton22.ActiveFillColor = System.Drawing.Color.Maroon;
-            this.bunifuThinButton22.ActiveForecolor = System.Drawing.Color.White;
-            this.bunifuThinButton22.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bunifuThinButton22.BackColor = System.Drawing.SystemColors.Control;
+            this.bunifuThinButton22.ActiveFillColor = System.Drawing.Color.White;
+            this.bunifuThinButton22.ActiveForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuThinButton22.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuThinButton22.BackColor = System.Drawing.Color.White;
             this.bunifuThinButton22.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton22.BackgroundImage")));
             this.bunifuThinButton22.ButtonText = "Reset";
             this.bunifuThinButton22.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuThinButton22.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuThinButton22.ForeColor = System.Drawing.Color.Maroon;
+            this.bunifuThinButton22.ForeColor = System.Drawing.Color.White;
             this.bunifuThinButton22.IdleBorderThickness = 1;
             this.bunifuThinButton22.IdleCornerRadius = 20;
-            this.bunifuThinButton22.IdleFillColor = System.Drawing.Color.White;
-            this.bunifuThinButton22.IdleForecolor = System.Drawing.Color.Maroon;
-            this.bunifuThinButton22.IdleLineColor = System.Drawing.Color.Maroon;
-            this.bunifuThinButton22.Location = new System.Drawing.Point(494, 692);
+            this.bunifuThinButton22.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuThinButton22.IdleForecolor = System.Drawing.Color.White;
+            this.bunifuThinButton22.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuThinButton22.Location = new System.Drawing.Point(538, 654);
             this.bunifuThinButton22.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.bunifuThinButton22.Name = "bunifuThinButton22";
-            this.bunifuThinButton22.Size = new System.Drawing.Size(176, 50);
+            this.bunifuThinButton22.Size = new System.Drawing.Size(175, 53);
             this.bunifuThinButton22.TabIndex = 71;
             this.bunifuThinButton22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuThinButton22.Click += new System.EventHandler(this.bunifuThinButton22_Click);
+            // 
+            // bunifuThinButton21
+            // 
+            this.bunifuThinButton21.ActiveBorderThickness = 1;
+            this.bunifuThinButton21.ActiveCornerRadius = 20;
+            this.bunifuThinButton21.ActiveFillColor = System.Drawing.Color.White;
+            this.bunifuThinButton21.ActiveForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuThinButton21.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuThinButton21.BackColor = System.Drawing.Color.White;
+            this.bunifuThinButton21.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton21.BackgroundImage")));
+            this.bunifuThinButton21.ButtonText = "calculate total";
+            this.bunifuThinButton21.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuThinButton21.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuThinButton21.ForeColor = System.Drawing.Color.White;
+            this.bunifuThinButton21.IdleBorderThickness = 1;
+            this.bunifuThinButton21.IdleCornerRadius = 20;
+            this.bunifuThinButton21.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuThinButton21.IdleForecolor = System.Drawing.Color.White;
+            this.bunifuThinButton21.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuThinButton21.Location = new System.Drawing.Point(164, 654);
+            this.bunifuThinButton21.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.bunifuThinButton21.Name = "bunifuThinButton21";
+            this.bunifuThinButton21.Size = new System.Drawing.Size(175, 53);
+            this.bunifuThinButton21.TabIndex = 73;
+            this.bunifuThinButton21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuThinButton21.Click += new System.EventHandler(this.bunifuThinButton21_Click);
+            // 
+            // bunifuThinButton24
+            // 
+            this.bunifuThinButton24.ActiveBorderThickness = 1;
+            this.bunifuThinButton24.ActiveCornerRadius = 20;
+            this.bunifuThinButton24.ActiveFillColor = System.Drawing.Color.White;
+            this.bunifuThinButton24.ActiveForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuThinButton24.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuThinButton24.BackColor = System.Drawing.Color.White;
+            this.bunifuThinButton24.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton24.BackgroundImage")));
+            this.bunifuThinButton24.ButtonText = "Back";
+            this.bunifuThinButton24.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuThinButton24.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuThinButton24.ForeColor = System.Drawing.Color.White;
+            this.bunifuThinButton24.IdleBorderThickness = 1;
+            this.bunifuThinButton24.IdleCornerRadius = 20;
+            this.bunifuThinButton24.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuThinButton24.IdleForecolor = System.Drawing.Color.White;
+            this.bunifuThinButton24.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuThinButton24.Location = new System.Drawing.Point(722, 654);
+            this.bunifuThinButton24.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.bunifuThinButton24.Name = "bunifuThinButton24";
+            this.bunifuThinButton24.Size = new System.Drawing.Size(175, 53);
+            this.bunifuThinButton24.TabIndex = 74;
+            this.bunifuThinButton24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuThinButton24.Click += new System.EventHandler(this.bunifuThinButton24_Click);
             // 
             // Boooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(983, 756);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(983, 716);
+            this.Controls.Add(this.bunifuThinButton24);
+            this.Controls.Add(this.bunifuThinButton21);
             this.Controls.Add(this.bunifuThinButton23);
             this.Controls.Add(this.custidcombo);
             this.Controls.Add(this.Customernamelbl);
@@ -1106,11 +1170,11 @@
             this.Controls.Add(this.Dishes);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.Drinks);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.persontb);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.timetxt);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.Datetxt);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -1208,13 +1272,15 @@
         private System.Windows.Forms.CheckBox ColdcoffeecheckBox;
         private System.Windows.Forms.CheckBox lassicheckBox;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox persontb;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox timetxt;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker Datetxt;
         private System.Windows.Forms.Label label4;
         private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton23;
         private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton22;
+        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton21;
+        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton24;
     }
 }

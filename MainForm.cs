@@ -28,29 +28,64 @@ namespace Wedding_Pal_Pro_SYSTEM
 
         }
 
-        private void bunifuThinButton22_Click(object sender, EventArgs e)
+        //private void bunifuThinButton22_Click(object sender, EventArgs e)
+        //{
+        //    ViewBooking viewBooking = new ViewBooking();
+        //    viewBooking.Show();
+        //    this.Hide();
+        //}
+
+        //private void bunifuThinButton23_Click(object sender, EventArgs e)
+        //{
+        //         Boooking boooking = new Boooking();
+        //         boooking.Show();
+        //         this.Hide();
+        //}
+
+        //private void bunifuThinButton21_Click(object sender, EventArgs e)
+        //{
+        //    Customer customer = new Customer();
+        //    customer.Show();
+        //    this.Hide();
+        //}
+
+        //private void bunifuThinButton24_Click(object sender, EventArgs e)
+        //{
+        //    Form1 login = new Form1();
+        //    login.Show();
+        //    this.Hide();
+        //}
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuThinButton23_Click_1(object sender, EventArgs e)
+        {
+            Boooking boooking = new Boooking();
+            boooking.Show();
+            this.Hide();
+        }
+
+        private void bunifuThinButton24_Click_1(object sender, EventArgs e)
+        {
+            Form1 login = new Form1();
+            login.Show();
+            this.Hide();
+        }
+
+        private void bunifuThinButton22_Click_1(object sender, EventArgs e)
         {
             ViewBooking viewBooking = new ViewBooking();
             viewBooking.Show();
             this.Hide();
         }
 
-        private void bunifuThinButton23_Click(object sender, EventArgs e)
+        private void bunifuThinButton21_Click_1(object sender, EventArgs e)
         {
-                 Boooking boooking = new Boooking();
-                 boooking.Show();
-                 this.Hide();
-        }
-
-        private void bunifuThinButton21_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void bunifuThinButton24_Click(object sender, EventArgs e)
-        {
-            Form1 login = new Form1();
-            login.Show();
+            Customer customer = new Customer();
+            customer.Show();
             this.Hide();
         }
     }

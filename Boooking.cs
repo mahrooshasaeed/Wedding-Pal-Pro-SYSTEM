@@ -1,9 +1,12 @@
-﻿using System;
+﻿using Guna.UI.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Printing;
+using System.IdentityModel.Protocols.WSTrust;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,8 +22,7 @@ namespace Wedding_Pal_Pro_SYSTEM
         }
 
         SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\mahro\Documents\Marriagedb.mdf;Integrated Security=True;Connect Timeout=30");
-
-       
+        private DataGridView gunaDataGridView1 = new DataGridView();
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
@@ -161,18 +163,18 @@ namespace Wedding_Pal_Pro_SYSTEM
 
         private void MuttonHaleemcheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            if (MuttonpulaocheckBox.Checked)
+            if (MuttonHaleemcheckBox.Checked)
             {
-                MuttonPulaoPrice.Enabled = true;
-                MuttonPulaoQty.Enabled = true;
+                MuttonhaleemPrice.Enabled = true;
+                MuttonhaleemQty.Enabled = true;
 
             }
             else
             {
-                MuttonPulaoPrice.Enabled = false;
-                MuttonPulaoQty.Enabled = false;
-                MuttonPulaoPrice.Text = "";
-                MuttonPulaoQty.Text = "";
+                MuttonhaleemPrice.Enabled = false;
+                MuttonhaleemQty.Enabled = false;
+                MuttonhaleemPrice.Text = "";
+                MuttonhaleemQty.Text = "";
             }
         }
 
@@ -294,7 +296,7 @@ namespace Wedding_Pal_Pro_SYSTEM
                 ChickenPulaoQty.Text = "";
             }
         }
-        int bevcost=0;
+        int bevcost = 0;
         private void button1_Click(object sender, EventArgs e)
         {
             int IcedTea = 0, Gola = 0, ColdCoffee = 0, lassi = 0, NimbuPani = 0, Pineapplejuice = 0, MixFruitJuice = 0, ColdDrink = 0;
@@ -382,7 +384,7 @@ namespace Wedding_Pal_Pro_SYSTEM
             else
             {
                 MuttonHaleem = Convert.ToInt32(MuttonhaleemPrice.Text) * Convert.ToInt32(MuttonhaleemQty.Text);
-                
+
 
             }
 
@@ -449,7 +451,7 @@ namespace Wedding_Pal_Pro_SYSTEM
                 ChickenPulao = Convert.ToInt32(ChickenPulaoPrice.Text) * Convert.ToInt32(ChickenPulaoQty.Text);
             }
 
-             FoodCost = MuttonHaleem + MuttonPulao + LukhmiKebab + FriedFish + LaalChicken + ChickenBiryani + MuttonBiryani + ChickenPulao;
+            FoodCost = MuttonHaleem + MuttonPulao + LukhmiKebab + FriedFish + LaalChicken + ChickenBiryani + MuttonBiryani + ChickenPulao;
             FoodCostlbl.Text = "" + FoodCost;
         }
         private void GetCustid()
@@ -499,7 +501,7 @@ namespace Wedding_Pal_Pro_SYSTEM
             }
             catch (Exception)
             {
-                Customernamelbl.Text = "No Customer Selected" ;
+                Customernamelbl.Text = "No Customer Selected";
             }
             finally
             {
@@ -511,46 +513,150 @@ namespace Wedding_Pal_Pro_SYSTEM
         {
             fetchCustName();
         }
-        //// ... (existing code)
+        private void CalculateTotal()
+        {
+            // Bev Cost
+            int bevcost = 0;
+            if (!string.IsNullOrEmpty(Bevcostlbl.Text))
+            {
+                bevcost = Convert.ToInt32(Bevcostlbl.Text);
+            }
 
-        //private void CalculateTotal()
-        //{
-        //    // Other Charges
-        //    int otherCharges = 0;
-        //    if (!string.IsNullOrEmpty(Otherchargestb.Text))
-        //    {
-        //        otherCharges = Convert.ToInt32(Otherchargestb.Text);
-        //    }
+            // Other Charges
+            int otherCharges = 0;
+            if (!string.IsNullOrEmpty(Otherchargestb.Text))
+            {
+                otherCharges = Convert.ToInt32(Otherchargestb.Text);
+            }
 
-        //    // Advance
-        //    int advance = 0;
-        //    if (!string.IsNullOrEmpty(Advancetb.Text))
-        //    {
-        //        advance = Convert.ToInt32(Advancetb.Text);
-        //    }
+            // Advance
+            int advance = 0;
+            if (!string.IsNullOrEmpty(Advancetb.Text))
+            {
+                advance = Convert.ToInt32(Advancetb.Text);
+            }
 
-        //    // Grand Total
-        //    int grandTotal = bevcost + FoodCost + otherCharges;
+            // Food Cost
+            int FoodCost = 0;
+            if (!string.IsNullOrEmpty(FoodCostlbl.Text))
+            {
+                FoodCost = Convert.ToInt32(FoodCostlbl.Text);
+            }
 
-        //    // Balance
-        //    int balance = grandTotal - advance;
+            // Grand Total
+            int grandTotal = bevcost + FoodCost + otherCharges;
 
-        //    Totalltb.Text = grandTotal.ToString();
-        //    balancetb.Text = balance.ToString();
-        //}
+            // Balance
+            int balance = grandTotal - advance;
 
 
-        //private void otherChargesTextBox_TextChanged(object sender, EventArgs e)
-        //{
-        //    CalculateTotal();
-        //}
+            Totalltb.Text = grandTotal.ToString();
+            balancetb.Text = balance.ToString();
+        }
+        private void bunifuThinButton23_Click(object sender, EventArgs e)
+        {
+            if (Datetxt.Text == "" || timetxt.SelectedIndex == -1 || Customernamelbl.Text == "" || persontb.Text == "" || Dishes.Text == "" || Drinks.Text == "" || Bevcostlbl.Text == "" || FoodCostlbl.Text == "" || Otherchargestb.Text == "" || Totalltb.Text == "" || Advancetb.Text == "" || balancetb.Text == "")
+            {
+                MessageBox.Show("Missing Data");
+            }
+            else
+            {
+                try
+                {
+                    conn.Open();
 
-        //private void advanceTextBox_TextChanged(object sender, EventArgs e)
-        //{
-        //    CalculateTotal();
-        //}
+                    string query = "INSERT INTO Boooking (BDate, BTime, CustName, Persons, Dishes, Drinks, CostFood, CostDrink, OtherCharges, GrdTotal, Advance, Balance) " +
+                                   "VALUES (@BDate, @BTime, @CustName, @Persons, @Dishes, @Drinks, @CostFood, @CostDrink, @OtherCharges, @GrdTotal, @Advance, @Balance)";
 
-        //// ... (existing code)
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@BDate", Datetxt.Value.ToString("yyyy-MM-dd")); // Assuming 'yyyy-MM-dd' is the appropriate date format for your SQL database
+                    cmd.Parameters.AddWithValue("@BTime", timetxt.SelectedItem.ToString());
+                    cmd.Parameters.AddWithValue("@CustName", Customernamelbl.Text);
+                    cmd.Parameters.AddWithValue("@Persons", persontb.Text);
+                    cmd.Parameters.AddWithValue("@Dishes", Dishes.Text);
+                    cmd.Parameters.AddWithValue("@Drinks", Drinks.Text);
+                    cmd.Parameters.AddWithValue("@CostFood", Bevcostlbl.Text);
+                    cmd.Parameters.AddWithValue("@CostDrink", FoodCostlbl.Text);
+                    cmd.Parameters.AddWithValue("@OtherCharges", Otherchargestb.Text);
+                    cmd.Parameters.AddWithValue("@GrdTotal", Totalltb.Text);
+                    cmd.Parameters.AddWithValue("@Advance", Advancetb.Text);
+                    cmd.Parameters.AddWithValue("@Balance", balancetb.Text);
+
+                    cmd.ExecuteNonQuery();
+
+                    MessageBox.Show("Boooking successfully added");
+
+                    conn.Close();
+
+                    populate();
+                    Clear();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+
+        private void populate()
+        {
+            conn.Open();
+            string query = "select * from Boooking";
+            SqlDataAdapter sda = new SqlDataAdapter(query, conn);
+            SqlCommandBuilder builder = new SqlCommandBuilder(sda);
+            var ds = new DataSet();
+            sda.Fill(ds);
+            gunaDataGridView1.DataSource = ds.Tables[0];
+            gunaDataGridView1.AutoGenerateColumns = true;
+            conn.Close();
+        }
+
+        int BookKey = 0;
+        public void gunaDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Datetxt.Text = gunaDataGridView1.SelectedRows[0].Cells[1].Value.ToString();
+            Customernamelbl.Text = gunaDataGridView1.SelectedRows[0].Cells[2].Value.ToString();
+            timetxt.SelectedItem = gunaDataGridView1.SelectedRows[0].Cells[3].Value.ToString();
+            persontb.Text = gunaDataGridView1.SelectedRows[0].Cells[4].Value.ToString();
+            Dishes.Text = gunaDataGridView1.SelectedRows[0].Cells[5].Value.ToString();
+            Drinks.Text = gunaDataGridView1.SelectedRows[0].Cells[6].Value.ToString();
+            Bevcostlbl.Text = gunaDataGridView1.SelectedRows[0].Cells[7].Value.ToString();
+            FoodCostlbl.Text = gunaDataGridView1.SelectedRows[0].Cells[8].Value.ToString();
+            Otherchargestb.Text = gunaDataGridView1.SelectedRows[0].Cells[9].Value.ToString();
+            Advancetb.Text = gunaDataGridView1.SelectedRows[0].Cells[10].Value.ToString();
+            Totalltb.Text = gunaDataGridView1.SelectedRows[0].Cells[11].Value.ToString();
+            balancetb.Text = gunaDataGridView1.SelectedRows[0].Cells[12].Value.ToString();
+
+
+            if (persontb.Text == "")
+            {
+                BookKey = 0;
+            }
+            else
+            {
+                BookKey = Convert.ToInt32(gunaDataGridView1.SelectedRows[0].Cells[0].Value.ToString());
+            }
+        }
+        public void Clear()
+        {
+            Datetxt.Text = "";
+            Customernamelbl.Text = "";
+            timetxt.Text = "";
+            persontb.Text = "";
+            Dishes.Text = "";
+            Drinks.Text = "";
+            Bevcostlbl.Text = "";
+            FoodCostlbl.Text = "";
+            Otherchargestb.Text = "";
+            Advancetb.Text = "";
+            Totalltb.Text = "";
+            balancetb.Text = "";
+            BookKey = 0;
+        }
+
+
+
 
         private void textBox51_TextChanged(object sender, EventArgs e)
         {
@@ -562,7 +668,31 @@ namespace Wedding_Pal_Pro_SYSTEM
 
         }
 
-        private void bunifuThinButton23_Click(object sender, EventArgs e)
+       
+
+        private void label21_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void bunifuThinButton22_Click(object sender, EventArgs e)
+        {
+            Clear();
+        }
+
+        private void bunifuThinButton21_Click(object sender, EventArgs e)
+        {
+            CalculateTotal();
+        }
+
+        private void bunifuThinButton24_Click(object sender, EventArgs e)
+        {
+            MainForm Home = new MainForm();
+            Home.Show();
+            this.Hide();
+        }
+
+        private void Datetxt_ValueChanged(object sender, EventArgs e)
         {
 
         }

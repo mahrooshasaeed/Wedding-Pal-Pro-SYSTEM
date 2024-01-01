@@ -134,7 +134,7 @@ namespace Wedding_Pal_Pro_SYSTEM
             staffnametb.Text = StaffDGV.SelectedRows[0].Cells[1].Value.ToString();
             staffphonetb.Text = StaffDGV.SelectedRows[0].Cells[2].Value.ToString();
             staffgender.SelectedItem = StaffDGV.SelectedRows[0].Cells[3].Value.ToString();
-            staffpass.Text = StaffDGV.SelectedRows[0].Cells[2].Value.ToString();
+            staffpass.Text = StaffDGV.SelectedRows[0].Cells[4].Value.ToString();
             if (staffnametb.Text == "")
             {
                 StaffKey = 0;
@@ -147,9 +147,14 @@ namespace Wedding_Pal_Pro_SYSTEM
 
         private void bunifuThinButton21_Click(object sender, EventArgs e)
         {
-            MainForm mf = new MainForm();
-            mf.Show();
+           Form1 form1 = new Form1();
+            form1.Show();
             this.Hide();
+        }
+
+        private void label21_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

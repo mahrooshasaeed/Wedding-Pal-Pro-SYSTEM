@@ -34,5 +34,17 @@ namespace Wedding_Pal_Pro_SYSTEM
                 MessageBox.Show("Wrong Password***Contact admin *Mahroosha* Of this system");
             }
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            Form1 form = new Form1();
+            form.Show();
+            this.Hide();
+        }
     }
 }

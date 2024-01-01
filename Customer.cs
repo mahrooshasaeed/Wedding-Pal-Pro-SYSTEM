@@ -139,6 +139,18 @@ namespace Wedding_Pal_Pro_SYSTEM
                 }
             }
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void backcustbtn_Click(object sender, EventArgs e)
+        {
+            MainForm Home = new MainForm();
+            Home.Show();
+            this.Hide();
+        }
     }
 }
     
