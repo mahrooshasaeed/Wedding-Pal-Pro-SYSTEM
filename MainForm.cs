@@ -88,5 +88,11 @@ namespace Wedding_Pal_Pro_SYSTEM
             customer.Show();
             this.Hide();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("print Data");
+           
+        }
     }
 }

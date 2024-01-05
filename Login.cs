@@ -40,7 +40,7 @@ namespace Wedding_Pal_Pro_SYSTEM
         {
             if(Usernametb.Text==""|| Passwordtb.Text == "")
             {
-                MessageBox.Show("Enter usernae or password");
+                MessageBox.Show("Enter username or password");
             }
             else
             {
@@ -70,6 +70,11 @@ namespace Wedding_Pal_Pro_SYSTEM
                 }
             }
            
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }
